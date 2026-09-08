@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools>=77.0.3", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yaw-yaw"
+version = "0.2.0"
+description = "Yaw-Yaw: a local speech studio powered by Kokoro, with desktop, browser, and CLI interfaces"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+requires-python = ">=3.10,<3.13"
+authors = [
+    { name = "PierrunoYT" },
+]
+dependencies = [
+    "kokoro",
+    "misaki[en]",
+    "torch",
+    "torchaudio",
+    "soundfile",
+    "sounddevice>=0.5,<0.6",
+    "huggingface-hub",
+    "gradio",
+    "pydub",
+    "espeakng-loader",
+    "phonemizer-fork",
+    "wheel",
+    "setuptools",
+    "num2words",
+    "spacy",
+    "tqdm",
+    "psutil",
+    "packaging",
+    "numpy<2.0",
+    "transformers>=4.33",
+    "safetensors",
+]
+
+[project.optional-dependencies]
+# Extra language resources can require native build tools on Windows.
+# English desktop and browser use does not need these packages.
+multilingual = [
+    "misaki[ja,zh]",
+    "maturin",
+    "underthesea",
+    "fugashi[unidic]",
+    "jaconv",
+    "mojimoji",
+    "pyopenjtalk",
+    "jamo",
+    "nltk",
+    "cn2an",
+    "jieba",
+    "ordered-set",
+    "pypinyin",
+    "pypinyin-dict",
+]
+
+[project.urls]
+Homepage = "https://github.com/PierrunoYT/Kokoro-TTS-Local"
+Issues = "https://github.com/PierrunoYT/Kokoro-TTS-Local/issues"
+
+[project.scripts]
+yaw-yaw = "kokoro_tts_local.tts_demo:main"
+yaw-yaw-web = "kokoro_tts_local.gradio_interface:main"
+kokoro-tts = "kokoro_tts_local.tts_demo:main"
+kokoro-tts-web = "kokoro_tts_local.gradio_interface:main"
+kokoro-tts-chinese = "kokoro_tts_local.chinese_tts_demo:main"
+kokoro-tts-setup = "kokoro_tts_local.setup_chinese_tts:cli"
+kokoro-tts-check = "kokoro_tts_local.dependency_checker:main"
+yaw-yaw-languages = "kokoro_tts_local.mms_engine:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]

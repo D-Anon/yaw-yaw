@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+.ui-review/
+*.swp
+*.swo
+
+# Project specific
+output*.wav
+*.pth
+*.onnx
+voices/
+voices/*.pt
+voices/**/*.pt
+config.json
+
+# Local application assets and restoration download
+kokoro-data/
+.upstream-source/
+upstream-source.zip
+requirements-local-verified.txt
+kokoro-main/
+installer.iss
+.tools-gh/
+.tools-gh.zip
+Yaw-Yaw.exe
+scratch_error.txt
+
+# Local publishing tools
+.tools-gh/
+.tools-gh.zip

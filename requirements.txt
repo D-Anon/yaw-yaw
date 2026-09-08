@@ -1,0 +1,6 @@
+﻿# Dependencies are maintained in pyproject.toml so all install methods agree.
+# Default: English desktop/browser and the shared Kokoro engine.
+-e .
+
+# Extra language packages (may need Windows C++ build tools):
+# python -m pip install -e ".[multilingual]"
